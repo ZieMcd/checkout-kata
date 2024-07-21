@@ -1,4 +1,4 @@
-namespace checkout_kata.library;
+namespace checkout_kata.library.models;
 
 public class Item()
 {

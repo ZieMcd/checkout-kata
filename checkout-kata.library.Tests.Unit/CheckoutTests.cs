@@ -1,3 +1,4 @@
+using checkout_kata.library.models;
 using Microsoft.Extensions.Logging;
 using Moq;
 

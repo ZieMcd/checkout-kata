@@ -1,10 +1,11 @@
+using checkout_kata.library.models;
 using Microsoft.Extensions.Logging;
 
 namespace checkout_kata.library;
 
 public class Checkout(List<PricingRule> pricingRules, ILogger<Checkout> logger) : ICheckout
 {
-    private List<Item> _cart = pricingRules.Select(x => new Item { SKU = x.SKU, UnitPrice = x.UnitPrice, Count = 0, SpecialAmount = x.SpecialAmount, SpecialPrice = x.SpecialPrice }).ToList();
+    private readonly List<Item> _cart = pricingRules.Select(x => new Item { SKU = x.SKU, UnitPrice = x.UnitPrice, Count = 0, SpecialAmount = x.SpecialAmount, SpecialPrice = x.SpecialPrice }).ToList();
 
     public void Scan(string item)
     {
@@ -30,13 +31,14 @@ public class Checkout(List<PricingRule> pricingRules, ILogger<Checkout> logger) 
         {
             if (item.SpecialAmount is not null && item.SpecialPrice is not null)
             {
-                var a = item.Count / item.SpecialAmount;
-                total += (int)(a * item.SpecialPrice);
+                var specialOffer = item.Count / item.SpecialAmount;
+                //just following interface given in README, I'm assuming there is not a scenario where total goes beyond int max 
+                total += (int)(specialOffer * item.SpecialPrice);
                 total += (int)(item.Count % item.SpecialAmount * item.UnitPrice);
                 continue;
             }
 
-            //just following interface given in README, I'm assuming there is not scenario where total goes beyond int max 
+            //just following interface given in README, I'm assuming there is not a scenario where total goes beyond int max 
             total += (int)(item.Count * item.UnitPrice);
         }
 
