@@ -14,6 +14,7 @@ public class CheckoutTests
         _loggerMock = new Mock<ILogger<Checkout>>();
     }
 
+
     [Test]
     public void Scan_InvalidItemIsScanned_ArgumentExceptionIsThrown()
     {
@@ -91,8 +92,8 @@ public class CheckoutTests
             },
             new List<string> { "A", "A", "C", "B", "B", "A", "D" },
             210
-        );
-        
+        ).SetName("TestCase 1");
+
         yield return new TestCaseData(
             new List<PricingRule>
             {
@@ -101,9 +102,9 @@ public class CheckoutTests
                 new("C", 20, null, null),
                 new("D", 15, null, null)
             },
-            new List<string> { "A", "B", "A", "C", "B","D", "B", "A", "D", "D" },
+            new List<string> { "A", "B", "A", "C", "B", "D", "B", "A", "D", "D" },
             270
-        );
+        ).SetName("TestCase 2");
 
         yield return new TestCaseData(
             new List<PricingRule>
@@ -115,7 +116,7 @@ public class CheckoutTests
             },
             new List<string> { "B", "A", "C" },
             100
-        );
+        ).SetName("TestCase 3");
 
         yield return new TestCaseData(
             new List<PricingRule>
@@ -124,6 +125,6 @@ public class CheckoutTests
             },
             new List<string> { "E", "E", "E", "E" },
             195
-        );
+        ).SetName("TestCase 4");
     }
 }
