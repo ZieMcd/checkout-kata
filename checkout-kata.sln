@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "checkout-kata.library", "checkout-kata.library\checkout-kata.library.csproj", "{BA4A2074-FF96-4279-99BC-459416D5DC39}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "checkout-kata.library.Tests.Unit", "checkout-kata.library.Tests.Unit\checkout-kata.library.Tests.Unit.csproj", "{C1E740AC-DBB1-4D50-9E19-B7A935853200}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BA4A2074-FF96-4279-99BC-459416D5DC39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA4A2074-FF96-4279-99BC-459416D5DC39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA4A2074-FF96-4279-99BC-459416D5DC39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA4A2074-FF96-4279-99BC-459416D5DC39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1E740AC-DBB1-4D50-9E19-B7A935853200}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1E740AC-DBB1-4D50-9E19-B7A935853200}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1E740AC-DBB1-4D50-9E19-B7A935853200}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1E740AC-DBB1-4D50-9E19-B7A935853200}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
