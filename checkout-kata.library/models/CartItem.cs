@@ -1,6 +1,6 @@
 namespace checkout_kata.library.models;
 
-public class Item()
+internal class CartItem
 {
     public string SKU { get; set; }
     public uint UnitPrice { get; set; }

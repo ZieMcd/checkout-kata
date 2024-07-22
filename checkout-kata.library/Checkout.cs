@@ -3,9 +3,9 @@ using Microsoft.Extensions.Logging;
 
 namespace checkout_kata.library;
 
-public class Checkout(List<PricingRule> pricingRules, ILogger<Checkout> logger) : ICheckout
+public class Checkout(IEnumerable<PricingRule> pricingRules, ILogger<Checkout> logger) : ICheckout
 {
-    private readonly List<Item> _cart = pricingRules.Select(x => new Item { SKU = x.SKU, UnitPrice = x.UnitPrice, Count = 0, SpecialAmount = x.SpecialAmount, SpecialPrice = x.SpecialPrice }).ToList();
+    private readonly List<CartItem> _cart = pricingRules.Select(x => new CartItem { SKU = x.SKU, UnitPrice = x.UnitPrice, Count = 0, SpecialAmount = x.SpecialAmount, SpecialPrice = x.SpecialPrice }).ToList();
 
     public void Scan(string item)
     {
